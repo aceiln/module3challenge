@@ -35,8 +35,6 @@ function generatePassword() {
     password.push(possibleChars[Math.floor(Math.random() * possibleChars.length)])
   }
 
-  console.log(document.getElementById("length").value)
-
   return password.join("")
 }
 
