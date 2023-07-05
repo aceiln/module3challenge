@@ -9,34 +9,36 @@ function generatePassword() {
 
   if (document.getElementById('caps').checked) {
     let newChars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-    possibleChars.concat(newChars)
+    possibleChars = possibleChars.concat(newChars)
     password.push(newChars[Math.floor(Math.random() * newChars.length)])
   }
 
   if (document.getElementById('lower').checked) {
     let newChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-    possibleChars.concat(newChars)
+    possibleChars = possibleChars.concat(newChars)
     password.push(newChars[Math.floor(Math.random() * newChars.length)])
   }
 
   if (document.getElementById('number').checked) {
     let newChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-    possibleChars.concat(newChars)
+    possibleChars = possibleChars.concat(newChars)
     password.push(newChars[Math.floor(Math.random() * newChars.length)])
   }
 
   if (document.getElementById('SpecialCharacters').checked) {
     let newChars = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '[', ']', '{', '}', '|', ';', ':', ',', '.', '<', '>', '/', '?']
-    possibleChars.concat(newChars)
+    possibleChars = possibleChars.concat(newChars)
     password.push(newChars[Math.floor(Math.random() * newChars.length)])
   }
 
   while (password.length < parseInt(document.getElementById("length").value)) {
     password.push(possibleChars[Math.floor(Math.random() * possibleChars.length)])
+    console.log(password)
   }
 
   return password.join("")
 }
+
 
 // Write password to the #password input
 function writePassword() {
